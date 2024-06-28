@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.IdentityModel.JsonWebTokens;
 using Microsoft.IdentityModel.Tokens;
+using WebApiOAuth;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,12 +20,15 @@ builder
             ValidIssuer = "https://localhost:5000",
             SignatureValidator = (token, parameters) => new JsonWebToken(token)
         };
+        options.EventsType = typeof(LoggingJwtBearerEvents);
     });
 
 builder.Services.AddHttpLogging(options =>
 {
     options.LoggingFields = HttpLoggingFields.All;
 });
+
+builder.Services.AddScoped<LoggingJwtBearerEvents>();
 
 builder.Services.AddControllers();
 
