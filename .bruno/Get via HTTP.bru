@@ -1,0 +1,15 @@
+meta {
+  name: Get via HTTP
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:5194/weatherforecast/
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAwIiwiYXVkIjoid2ViLWFwaS1vYXV0aC10ZXN0Iiwic3ViIjoidGVzdCIsImV4cCI6NDg3NTI0NjA1M30.NXEfjbeDtXtJ7v1rzzvZJIhc03zrTlrDFRcqy42-93oD5h03zhAcXnUE-g2qxoZOkrNqvr0xKqdD-ePKDisX0M8jJhvtccNmEZ88b9PJWljnp0dAu5kTWvstmnz-pxbji5JUy15wccoCJGAmUF4saybg1sh-cAFjaAf8ySV_nPP_9DdMPB31lHjOy6gwAwAEnHoJ_13RhIbmmq8wrAHSf3whkluKuRaHjqm2BgcP-SBfAykRTfMam8Xze3uHOLhgTps9AlIL3RyyvwXd7EFlBawEXDgJqMdONUsVdB5470VpahgiHi0u_f914XS3HDfrzm-sq4heqUyxcGMXchVAPQ
+}
